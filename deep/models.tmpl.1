@@ -13,10 +13,9 @@ class Level3(models.Model):
 
 class Level4(models.Model):
     name = models.CharField(max_length=100)
-    info = models.CharField(max_length=100, blank=True, null=True)
     parent = models.ForeignKey(Level3, related_name='child')
 
 class Level5(models.Model):
-    #name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default='name')
     parent = models.ForeignKey(Level4, related_name='child')
 
